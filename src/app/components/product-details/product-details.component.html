@@ -1,40 +1,50 @@
-<button type="button" class="btn btn-primary" (click)="backToProductList()">Back to product List</button>
-<div class="card" style="width: 18rem;">
-    <img src="../../../assets/images/chocolate.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Cadbury Dairy milk chocolate</h5>
-        <p class="card-text">Deliciously creamy Cadbury Dairy Milk milk chocolate, packed with soft vanilla flavour
-            filling and crunchy Oreo pieces - snap off a bite of biscuity bliss!</p>
-    </div>
-    <div class="card-body">
-        <div>
-            <label>Product Id:</label>
-            <span>#0001</span>
+<div class="container-fluid">
+    <div class="row">
+        <div class=" text-end mt-3 mb-3">
+            <button type="button" class="btn btn-primary" (click)="backToProductList()">Back to product List</button>
         </div>
-        <div>
-            <label>Name:</label>
-            <span>Cadbury Dairy milk chocolate</span>
+        <div class="col-md-6 pr-img">
+            <img src="../../../assets/images/chocolate.jpg" class="card-img-top" alt="...">
         </div>
-        <div>
-            <label>Description:</label>
-            <span>Deliciously creamy Cadbury Dairy Milk milk chocolate, packed with soft vanilla flavour
-                filling and crunchy Oreo pieces - snap off a bite of biscuity bliss!</span>
-        </div>
-        <div>
-            <label>Category:</label>
-            <span>Chocolate</span>
-        </div>
-        <div>
-            <label>Expire Date:</label>
-            <span>2022.10.20</span>
-        </div>
-        <div>
-            <label>Unit Price:</label>
-            <span>Rs. 800</span>
-        </div>
-        <div>
-            <label>Uni in Stock:</label>
-            <span>600</span>
+        <div class="col-md-6 content-bg ">
+            <div>
+                <h5 class="mb-3">Cadbury Dairy milk chocolate</h5>
+                <p>
+                    Deliciously creamy Cadbury Dairy Milk milk chocolate, packed with soft vanilla flavour
+                    filling and crunchy Oreo pieces - snap off a bite of biscuity bliss!
+                </p>
+            </div>
+            <div>
+                <div class="form-group">
+                    <label class="form-label">Product Id:</label>
+                    <span>#0001</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Name:</label>
+                    <span>Cadbury Dairy milk chocolate</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Description:</label>
+                    <span>Deliciously creamy Cadbury Dairy Milk milk chocolate, packed with soft vanilla flavour
+                        filling and crunchy Oreo pieces - snap off a bite of biscuity bliss!</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Category:</label>
+                    <span>Chocolate</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Expire Date:</label>
+                    <span>2022.10.20</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Unit Price:</label>
+                    <span>Rs. 800</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Uni in Stock:</label>
+                    <span>600</span>
+                </div>
+            </div>
         </div>
     </div>
 </div>

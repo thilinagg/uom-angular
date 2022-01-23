@@ -1,48 +1,52 @@
-<div class="row" *ngIf="!showProductDetails">
-    <section class="col-md-7">
-        <button type="button" class="btn btn-primary" (click)="addProduct()">Add Product</button>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Product Id</th>
-                    <th scope="col">Product Name</th>
-                    <th scope="col">Product Description</th>
-                    <th scope="col">Created Date</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Unit Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr (click)="productDetails()">
-                    <th scope="row">1</th>
-                    <td>Rice</td>
-                    <td>Basmathi imported from pakistan</td>
-                    <td>2022.01.20</td>
-                    <td>500</td>
-                    <td>400</td>
-                </tr>
-                <tr (click)="productDetails()">
-                    <th scope="row">2</th>
-                    <td>Milk</td>
-                    <td>Cow Milk from New Zealand</td>
-                    <td>2022.01.20</td>
-                    <td>50</td>
-                    <td>400</td>
-                </tr>
-                <tr (click)="productDetails()">
-                    <th scope="row">3</th>
-                    <td>Sugar</td>
-                    <td>Palwatte Factory</td>
-                    <td>2022.01.20</td>
-                    <td>1200</td>
-                    <td>200</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-    <section class="col-md-5" *ngIf="showAddProduct">
-        <app-add-product (cancelAddProduct)="cancelAddProduct()"></app-add-product>
-    </section>
+<div class="container-fluid main-content" *ngIf="!showProductDetails">
+    <div class="row">
+        <section [ngClass]="showAddProduct? 'col-md-7': 'col-md-12'">
+            <div class="text-end mt-3 mb-3">
+                <button type="button" class="btn btn-outline-primary" (click)="addProduct()">Add Product</button>
+            </div>
+            <table class="table">
+                <thead class="thead-light t-head">
+                    <tr>
+                        <th scope="col">Product Id</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Product Description</th>
+                        <th scope="col">Created Date</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Unit Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr (click)="productDetails()">
+                        <th scope="row">1</th>
+                        <td>Rice</td>
+                        <td>Basmathi imported from pakistan</td>
+                        <td>2022.01.20</td>
+                        <td>500</td>
+                        <td>400</td>
+                    </tr>
+                    <tr (click)="productDetails()">
+                        <th scope="row">2</th>
+                        <td>Milk</td>
+                        <td>Cow Milk from New Zealand</td>
+                        <td>2022.01.20</td>
+                        <td>50</td>
+                        <td>400</td>
+                    </tr>
+                    <tr (click)="productDetails()">
+                        <th scope="row">3</th>
+                        <td>Sugar</td>
+                        <td>Palwatte Factory</td>
+                        <td>2022.01.20</td>
+                        <td>1200</td>
+                        <td>200</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="col-md-5" *ngIf="showAddProduct">
+            <app-add-product (cancelAddProduct)="cancelAddProduct()"></app-add-product>
+        </section>
+    </div>
 </div>
 <div *ngIf="showProductDetails">
     <app-product-details (backToList)="closeProductDetais()"></app-product-details>

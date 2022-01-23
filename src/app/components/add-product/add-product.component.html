@@ -1,39 +1,48 @@
-<h1>Add a new product</h1>
-<button type="button" class="btn btn-primary" (click)="cancel()">Cancel</button>
-<form class="row g-3">
-    <div>
-        <label class="form-label">Product Name</label>
-        <input type="text" class="form-control">
+<div class="add-product-section mt-3">
+    <div class="box-head">
+        <h1 class="pr-name">Add a new product</h1>
+        <button type="button" class="btn btn-light" (click)="cancel()">X</button>
     </div>
-    <div>
-        <label class="form-label">Product Description</label>
-        <input type="text" class="form-control">
-    </div>
-    <div>
-        <select class="form-select">
-            <option selected>Select Category</option>
-            <option value="Vegetables">Vegetables</option>
-            <option value="Fruits">Fruits</option>
-            <option value="Desserts">Desserts</option>
-        </select>
-    </div>
-    <div>
-        <label class="form-label">Expire Date</label>
-        <input type="date" class="form-control">
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            <label class="form-label">Unit Price</label>
+    <form class="row g-3">
+        <div class="form-group">
+            <label class="form-label">Product Name</label>
             <input type="text" class="form-control">
         </div>
-        <div class="col-md-6">
-            <label class="form-label">Units in stock</label>
+        <div class="form-group">
+            <label class="form-label">Product Description</label>
             <input type="text" class="form-control">
         </div>
-    </div>
+        <div class="form-group">
+            <label class="form-label">Select Category</label>
+            <select class="form-select">
+                <option selected></option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Fruits">Fruits</option>
+                <option value="Desserts">Desserts</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Expire Date</label>
+            <input type="date" class="form-control">
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="form-label">Unit Price</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="form-label">Units in stock</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+        </div>
 
-    <div class="col-12">
-        <button type="submit" class="btn btn-primary">Add Product</button>
-        <button type="button" class="btn btn-secondary">cancel</button>
-    </div>
-</form>
+        <div class="col-12 text-end mt-5">
+            <button type="button" class="btn btn btn-outline-secondary me-2">cancel</button>
+            <button type="submit" class="btn btn-outline-primary">Add Product</button>
+        </div>
+    </form>
+</div>
