@@ -5,4 +5,5 @@ export interface Product {
   quantity: number;
   unitPrice: number;
   productDescription: string;
+  expiryDate: string;
 }

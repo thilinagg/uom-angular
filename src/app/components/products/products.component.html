@@ -3,7 +3,12 @@
         <section [ngClass]="showAddProduct? 'col-md-7': 'col-md-12'">
 
             <div class="product-header">
-                <h1>Product List</h1>
+                <h1>Product List
+                    <span *ngIf="!isLoading" (click)="refresh()" style="cursor: pointer;">
+                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                    </span>
+                    <i *ngIf="isLoading" class="fa fa-refresh fa-spin fa-fw" aria-hidden="true"></i>
+                </h1>
                 <button *ngIf="!showAddProduct" type="button" class="btn btn-outline-primary" (click)="addProduct()">Add
                     Product</button>
                 <button *ngIf="showAddProduct" type="button" class="btn btn-outline-primary"
@@ -22,29 +27,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr (click)="productDetails()">
-                        <th scope="row">1</th>
-                        <td>Rice</td>
-                        <td>Basmathi imported from pakistan</td>
-                        <td>2022.01.20</td>
-                        <td>500</td>
-                        <td>400</td>
-                    </tr>
-                    <tr (click)="productDetails()">
-                        <th scope="row">2</th>
-                        <td>Milk</td>
-                        <td>Cow Milk from New Zealand</td>
-                        <td>2022.01.20</td>
-                        <td>50</td>
-                        <td>400</td>
-                    </tr>
-                    <tr (click)="productDetails()">
-                        <th scope="row">3</th>
-                        <td>Sugar</td>
-                        <td>Palwatte Factory</td>
-                        <td>2022.01.20</td>
-                        <td>1200</td>
-                        <td>200</td>
+                    <tr *ngFor="let product of products">
+                        <th scope="row">{{product.id}}</th>
+                        <td>{{product.productName}}</td>
+                        <td>{{product.productDescription}}</td>
+                        <td>{{product.createdDate | date}}</td>
+                        <td>{{product.quantity}}</td>
+                        <td>{{product.unitPrice}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -57,5 +46,3 @@
 <div *ngIf="showProductDetails">
     <app-product-details (backToList)="closeProductDetais()"></app-product-details>
 </div>
-
-<pre *ngIf="products.length > 0">{{products| json}}</pre>

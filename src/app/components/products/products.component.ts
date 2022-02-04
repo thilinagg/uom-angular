@@ -11,6 +11,7 @@ export class ProductsComponent implements OnInit {
   showAddProduct: boolean = false;
   showProductDetails: boolean = false;
   products: Product[] = [];
+  isLoading = false;
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
@@ -18,8 +19,10 @@ export class ProductsComponent implements OnInit {
   }
 
   getProducts() {
+    this.isLoading = true;
     this.productService.getProducts().subscribe((res) => {
       this.products = res;
+      this.isLoading = false;
     });
   }
 
@@ -37,5 +40,9 @@ export class ProductsComponent implements OnInit {
 
   closeProductDetais() {
     this.showProductDetails = false;
+  }
+
+  refresh() {
+    this.getProducts();
   }
 }
