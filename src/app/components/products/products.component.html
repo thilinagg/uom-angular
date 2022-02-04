@@ -1,8 +1,14 @@
 <div class="container-fluid main-content" *ngIf="!showProductDetails">
     <div class="row">
         <section [ngClass]="showAddProduct? 'col-md-7': 'col-md-12'">
-            <div class="text-end mt-3 mb-3">
-                <button type="button" class="btn btn-outline-primary" (click)="addProduct()">Add Product</button>
+
+            <div class="product-header">
+                <h1>Product List</h1>
+                <button *ngIf="!showAddProduct" type="button" class="btn btn-outline-primary" (click)="addProduct()">Add
+                    Product</button>
+                <button *ngIf="showAddProduct" type="button" class="btn btn-outline-primary"
+                    (click)="cancelAddProduct()">Cancel add
+                    Product</button>
             </div>
             <table class="table">
                 <thead class="thead-light t-head">
@@ -43,11 +49,13 @@
                 </tbody>
             </table>
         </section>
-        <section class="col-md-5" *ngIf="showAddProduct">
-            <app-add-product (cancelAddProduct)="cancelAddProduct()"></app-add-product>
+        <section class="col-md-5">
+            <app-add-product *ngIf="showAddProduct" (cancelAddProduct)="cancelAddProduct()"></app-add-product>
         </section>
     </div>
 </div>
 <div *ngIf="showProductDetails">
     <app-product-details (backToList)="closeProductDetais()"></app-product-details>
 </div>
+
+<pre *ngIf="products.length > 0">{{products| json}}</pre>

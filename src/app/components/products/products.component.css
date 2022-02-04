@@ -12,3 +12,22 @@ table {
 table tbody tr td {
     cursor: pointer;
 }
+
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+h1 {
+    font-size: 30px;
+    color: rgb(65, 65, 65);
+}
+
+.btn-outline-primary:hover{
+    background-color: cornflowerblue !important;;
+    border-color: cornflowerblue !important;;
+}
