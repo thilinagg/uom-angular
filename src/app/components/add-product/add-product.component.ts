@@ -40,7 +40,7 @@ export class AddProductComponent implements OnInit {
     const values = this.productFrom.value as Product;
     values.createdDate = new Date().toDateString();
     this.isDataUploading = true;
-    this.productService.addProduct(values as Product).subscribe((res) => {
+    this.productService.addProduct(values).subscribe((res) => {
       this.isDataUploading = false;
       this.productFrom.reset();
     });

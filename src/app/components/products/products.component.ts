@@ -12,6 +12,7 @@ export class ProductsComponent implements OnInit {
   showProductDetails: boolean = false;
   products: Product[] = [];
   isLoading = false;
+  selectedProductToEdit!: Product | null;
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
@@ -44,5 +45,9 @@ export class ProductsComponent implements OnInit {
 
   refresh() {
     this.getProducts();
+  }
+
+  editProduct(product: Product) {
+    this.selectedProductToEdit = product;
   }
 }

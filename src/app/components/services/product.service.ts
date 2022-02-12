@@ -8,9 +8,7 @@ import { Product } from 'src/app/models/products.model';
 })
 export class ProductService {
   private _productsUrl = 'api/products';
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-  };
+
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<Product[]> {
@@ -18,10 +16,10 @@ export class ProductService {
   }
 
   addProduct(product: Product): Observable<Product> {
-    return this.http.post<Product>(
-      this._productsUrl,
-      product,
-      this.httpOptions
-    );
+    return this.http.post<Product>(this._productsUrl, product);
+  }
+
+  updateProduct(product: Product): Observable<Product> {
+    return this.http.put<Product>(this._productsUrl, product);
   }
 }
